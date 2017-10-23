@@ -6,6 +6,7 @@ import com.jayway.jsonpath.PathNotFoundException;
 import io.pivotal.pal.tracker.testsupport.TestScenarioSupport;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import test.pivotal.pal.tracker.support.ApplicationServer;
 import test.pivotal.pal.tracker.support.HttpClient;
@@ -14,10 +15,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Fail.fail;
 import static test.pivotal.pal.tracker.support.MapBuilder.jsonMapBuilder;
 
+@Ignore
 public class FlowTest {
 
     private final HttpClient httpClient = new HttpClient();
     private final String workingDir = System.getProperty("user.dir");
+
 
     private ApplicationServer registrationServer = new ApplicationServer(workingDir + "/../applications/registration-server/build/libs/registration-server.jar", "8883");
     private ApplicationServer allocationsServer = new ApplicationServer(workingDir + "/../applications/allocations-server/build/libs/allocations-server.jar", "8881");
